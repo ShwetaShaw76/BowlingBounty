@@ -15,16 +15,18 @@
       <img id="background" src="R.jpg">
     </a-assets>
     <a-sky src="#background"></a-sky>
-   <a-box id="ball" 
+   <a-box 
      color="red"
      //radius="3"
      height="3"
      width="3"
+     depth="3"
      position="0 -2.5 18">
      <a-animation attribute="rotation"
                   to="0 360 0"
                   repeat="indefinite"
-                  dur="2000">
+                  dur="2000"
+                  easing="ease">
      </a-animation>
      </a-box>
   <a-cylinder
