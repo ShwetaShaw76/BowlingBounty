@@ -12,47 +12,47 @@
 <body>
   <a-scene>
     <a-sky color="blue"></a-sky>
-   <a-sphere 
+   <a-sphere id="ball" 
      color="red"
      radius="3"
-     position="0 -4 15">
+     position="0 -4 15" dynamic-body>
      </a-sphere>
   <a-cylinder
     color="white"
     radius="1.5"
-    height="8">  
+    height="10">  
   </a-cylinder>
   <a-cylinder
     color="white"
     radius="1.5"
-    height="8"
+    height="10"
     position="-3.5 0 0">  
   </a-cylinder>
   <a-cylinder
     color="white"
     radius="1.5"
-    height="8"
+    height="10"
     position="3.5 0 0">  
   </a-cylinder>
     <a-cylinder
       color="white"
       radius="1.5"
-      height="8"
+      height="10"
       position="-7 0 0">  
     </a-cylinder>
     <a-cylinder
       color="white"
       radius="1.5"
-      height="8"
+      height="10"
       position="7 0 0">  
     </a-cylinder>
-    <a-cuboid
-      color="brown"
-      height="2"
-      width="15"
-      depth="-20"
-      position="0 -9 0">
-    </a-cuboid>
+    <a-plane
+      color="black"
+      height="20"
+      width="25"
+      depth="-2"
+      position="0 0 -5">
+    </a-plane>
   </a-scene>
 </body>
 
