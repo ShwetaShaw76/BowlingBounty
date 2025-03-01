@@ -11,7 +11,10 @@
 
 <body>
   <a-scene>
-    <a-sky color="blue"></a-sky>
+    <a-assets>
+      <img id="background" src="R.jpg">
+    </a-assets>
+    <a-sky src="#background"></a-sky>
    <a-sphere id="ball" 
      color="red"
      radius="3"
@@ -58,6 +61,9 @@
     scale="20 50 4"
     position="0 -5 0"> 
     </a-plane>
+    <a-camera
+    user-height="1.6" 
+    position="0 0 27"></a-camera>
   </a-scene>
 </body>
 
