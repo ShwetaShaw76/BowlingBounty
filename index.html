@@ -18,36 +18,43 @@
    <a-sphere id="ball"
      color="red"
      radius="3"
-     position="0 -2.5 18">
+     position="0 -2.5 18"
+     animation="property:position; to:0 -2.5 2; loop:false; dur:1000; elasticity:900">
      </a-sphere>
   <a-cylinder
     color="white"
     radius="1.5"
-    height="10">  
+    height="10"
+    animation="property:rotation; from:0 0 0; to:30 30 30; dur:430; loop:false;delay:510"
+    animation_2="property:position; from:0 0 0;to:0 0 40; dur:400; loop:false;delay:510">  
   </a-cylinder>
   <a-cylinder
     color="white"
     radius="1.5"
     height="10"
-    position="-3.5 0 0">  
+    position="-3.5 0 0" 
+    animation="property:rotation; from:0 0 0; to:45 -45 0; dur:400; loop:false ;delay:480">
   </a-cylinder>
   <a-cylinder
     color="white"
     radius="1.5"
     height="10"
-    position="3.5 0 0">  
+    position="3.5 0 0"
+    animation="property:rotation; from:0 0 0; to:-20 -20 0; dur:400; loop:false ;delay:480">  
   </a-cylinder>
     <a-cylinder
       color="white"
       radius="1.5"
       height="10"
-      position="-7 0 0">  
+      position="-7 0 0"
+      animation="property:rotation; from:0 0 0; to:30 -30 0; dur:400; loop:false ;delay:550">  
     </a-cylinder>
     <a-cylinder
       color="white"
       radius="1.5"
       height="10"
-      position="7 0 0">  
+      position="7 0 0"
+      animation="property:rotation; from:0 0 0; to:-40 -40 0; dur:400; loop:false ;delay:550">  
     </a-cylinder>
     <a-plane
       color="black"
