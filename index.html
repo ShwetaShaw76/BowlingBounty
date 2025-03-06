@@ -7,6 +7,8 @@
   <title>Bowling Bounty</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="my-app.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=frame_reload" />
 </head>
 
 <body>
@@ -66,7 +68,7 @@
       position="0 0 -5">
     </a-plane>
     <a-plane
-    animation="property: material.src:#goal;loop:true ;delay:550"
+    animation="property: material.src:#goal;loop:false;delay:550"
       color="grey"
       height="10"
       width="25"
@@ -80,6 +82,12 @@
       depth="-2"
       position="0 0 -6">
     </a-plane>
+    <a-circle id="reload"
+    position="40 15 0"
+    radius="3"
+    color="white" 
+    src="reload.png">
+  </a-circle>
     <a-plane src="#lane"
     rotation="-90 0 0"
     scale="20 50 4"
