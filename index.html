@@ -13,6 +13,8 @@
   <a-scene>
     <a-assets>
       <img id="background" src="R.jpg">
+      <img id="lane" src="bowling_lane.jpg">
+      <img id="goal" src="goal.gif">
     </a-assets>
     <a-sky src="#background"></a-sky>
    <a-sphere id="ball"
@@ -63,10 +65,35 @@
       depth="-2"
       position="0 0 -5">
     </a-plane>
-    <a-plane material="color: skyblue"
+    <a-plane
+    animation="property: material.src:#goal;loop:true ;delay:550"
+      color="grey"
+      height="10"
+      width="25"
+      depth="-2"
+      position="0 15 -5">
+    </a-plane>
+    <a-plane
+      color="brown"
+      height="45"
+      width="30"
+      depth="-2"
+      position="0 0 -6">
+    </a-plane>
+    <a-plane src="#lane"
     rotation="-90 0 0"
     scale="20 50 4"
     position="0 -5 0"> 
+    </a-plane>
+    <a-plane color="skyblue"
+    rotation="-90 0 0"
+    scale="10 50 4"
+    position="15 -6 0"> 
+    </a-plane>
+    <a-plane color="skyblue"
+    rotation="-90 0 0"
+    scale="10 50 4"
+    position="-15 -6 0"> 
     </a-plane>
     <a-camera
     user-height="1.6" 
