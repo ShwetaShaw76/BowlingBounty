@@ -5,10 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Bowling Bounty</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-  <script src="my-app.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=frame_reload" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -23,9 +21,10 @@
      color="red"
      radius="3"
      position="0 -2.5 18"
-     animation="property:position; to:0 -2.5 2; loop:false; dur:1000; elasticity:900">
+     animation="property:position; to:0 -2.5 2; loop:false ;dur:1000; elasticity:900">
      </a-sphere>
   <a-cylinder
+     id="pin1"
     color="white"
     radius="1.5"
     height="10"
@@ -33,6 +32,7 @@
     animation_2="property:position; from:0 0 0;to:0 0 40; dur:400; loop:false;delay:510">  
   </a-cylinder>
   <a-cylinder
+    id="pin2"
     color="white"
     radius="1.5"
     height="10"
@@ -40,6 +40,7 @@
     animation="property:rotation; from:0 0 0; to:45 -45 0; dur:400; loop:false ;delay:480">
   </a-cylinder>
   <a-cylinder
+    id="pin3"
     color="white"
     radius="1.5"
     height="10"
@@ -47,6 +48,7 @@
     animation="property:rotation; from:0 0 0; to:-20 -20 0; dur:400; loop:false ;delay:480">  
   </a-cylinder>
     <a-cylinder
+      id="pin4"
       color="white"
       radius="1.5"
       height="10"
@@ -54,6 +56,7 @@
       animation="property:rotation; from:0 0 0; to:30 -30 0; dur:400; loop:false ;delay:550">  
     </a-cylinder>
     <a-cylinder
+      id="pin5"
       color="white"
       radius="1.5"
       height="10"
@@ -67,7 +70,7 @@
       depth="-2"
       position="0 0 -5">
     </a-plane>
-    <a-plane
+    <a-plane id="display"
     animation="property: material.src:#goal;loop:false;delay:550"
       color="grey"
       height="10"
@@ -82,11 +85,13 @@
       depth="-2"
       position="0 0 -6">
     </a-plane>
+    <a-entity cursor="rayOrigin: mouse"></a-entity>
     <a-circle id="reload"
     position="40 15 0"
     radius="3"
-    color="white" 
-    src="reload.png">
+    color="blue" 
+    src="reload.png"
+    class="clickable">
   </a-circle>
     <a-plane src="#lane"
     rotation="-90 0 0"
@@ -107,6 +112,36 @@
     user-height="1.6" 
     position="0 0 27"></a-camera>
   </a-scene>
+  <script>
+    var rel =document.querySelector('#reload')
+    var ball=document.querySelector('#ball')
+    var pin1=document.querySelector('#pin1')
+    var pin2=document.querySelector('#pin2')
+    var pin3=document.querySelector('#pin3')
+    var pin4=document.querySelector('#pin4')
+    var pin5=document.querySelector('#pin5')
+    var display=document.querySelector('#display')
+    rel.addEventListener("click",function(){
+      ball.setAttribute("position",{x:0,y:-2.5,z:18})
+      display.setAttribute("material","color","grey")
+      ball.setAttribute("animation",{property:'position', to:{x:0, y:-2.5, z:2}, loop:false ,dur:1000, elasticity:900})
+      pin1.setAttribute("rotation",{x:0,y:0,z:0})
+      pin2.setAttribute("rotation",{x:0,y:0,z:0})
+      pin3.setAttribute("rotation",{x:0,y:0,z:0})
+      pin4.setAttribute("rotation",{x:0,y:0,z:0})
+      pin5.setAttribute("rotation",{x:0,y:0,z:0})
+      pin1.setAttribute("animation",{property:'rotation', from:{x:0, y:0, z:0}, to:{x:45, y:-45, z:0}, dur:400, loop:false ,delay:480})
+      pin2.setAttribute("animation",{property:'rotation', from:{x:0, y:0, z:0}, to:{x:45 ,y:-45 ,z:0},dur:400, loop:false ,delay:480})
+      pin3.setAttribute("animation",{property:'rotation', from:{x:0, y:0, z:0}, to:{x:-20,y: -20,z: 0}, dur:400, loop:false ,delay:480})
+      pin4.setAttribute("animation",{property:'rotation', from:{x:0, y:0, z:0}, to:{x:30 ,y:-30 ,z:0},dur:400, loop:false ,delay:550})
+      pin5.setAttribute("animation",{property:'rotation', from:{x:0, y:0, z:0}, to:{x:-40,y: -40,z: 0}, dur:400, loop:false ,delay:550})
+      
+    setTimeout(function(){
+      setTimeout(function(){
+      display.setAttribute("material","src","#goal")
+    },550);
+  },0);
+  })
+  </script>
 </body>
-
 </html>
